@@ -187,6 +187,31 @@
   /**
    * Porfolio isotope and filter
    */
+  // window.addEventListener('load', () => {
+  //   let portfolioContainer = select('.portfolio-container');
+  //   if (portfolioContainer) {
+  //     let portfolioIsotope = new Isotope(portfolioContainer, {
+  //       itemSelector: '.portfolio-item',
+  //       layoutMode: 'fitRows'
+  //     });
+
+  //     let portfolioFilters = select('#portfolio-flters li', true);
+
+  //     on('click', '#portfolio-flters li', function(e) {
+  //       e.preventDefault();
+  //       portfolioFilters.forEach(function(el) {
+  //         el.classList.remove('filter-active');
+  //       });
+  //       this.classList.add('filter-active');
+
+  //       portfolioIsotope.arrange({
+  //         filter: this.getAttribute('data-filter')
+  //       });
+  //     }, true);
+  //   }
+
+  // });
+
   window.addEventListener('load', () => {
     let portfolioContainer = select('.portfolio-container');
     if (portfolioContainer) {
@@ -204,13 +229,19 @@
         });
         this.classList.add('filter-active');
 
+        let filterValue = this.getAttribute('data-filter');
         portfolioIsotope.arrange({
-          filter: this.getAttribute('data-filter')
+          filter: filterValue
         });
       }, true);
-    }
 
-  });
+      // Filter portfolio on load to show only mockup items
+      portfolioIsotope.arrange({
+        filter: '.mockups'
+      });
+    }
+});
+
 
   /**
    * Initiate portfolio lightbox 
