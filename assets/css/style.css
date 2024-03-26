@@ -1214,3 +1214,24 @@ section .container {
   width: 100%;
   border: 1px solid rgb(229, 229, 229);
 }
+
+/*--------------------------------------------------------------
+# College Reports
+--------------------------------------------------------------*/
+.report-layout {
+  display: flex;
+  justify-content: space-between;
+}
+.first-report {
+  border: 1px solid gray;
+    padding: 50px;
+    /* width: 50%; */
+    height: 200px;
+    background-color:#cdf1f9;
+    display: flex;
+    align-items: center;
+}
+
+.report-title {
+  color: black;
+}
